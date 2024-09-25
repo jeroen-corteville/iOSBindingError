@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-ios</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>true</ImplicitUsings>
+    <IsBindingProject>true</IsBindingProject>
+	<SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+	<ItemGroup>
+		<NativeReference Include="libeID-SDK.a">
+			<Kind>Static</Kind>
+			<ForceLoad>True</ForceLoad>
+			<Frameworks>CoreBluetooth ExternalAccessory</Frameworks>
+		</NativeReference>
+	</ItemGroup>
+</Project>
